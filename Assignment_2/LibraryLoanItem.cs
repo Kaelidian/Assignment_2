@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment_2
 {
-    internal class LibraryLoanItem
+    public class LibraryLoanItem
     {
         protected string _callNumber; // Format "100 GAD"
         protected string _title;
@@ -65,25 +65,49 @@ namespace Assignment_2
 
         public int[] TimesRenewed { get { return _timesRenewed; } }
 
-        public int CheckOut()
+        public int CheckOut(string callNumber)
         {
+            //To check out 
+            //update availableCopies
+            
+
+
+            int copy = -1;
+
             if (this.AvailableCopies >= 1)
             {
-                return (Copies);
+                copy = Copies - AvailableCopies;
+
+                //TimesRenewed[copy] = 0;
+                
+                return copy;
+
             }
             else return -1;
         }
 
-        public bool CheckIn()
+        public bool CheckIn(string callNumber, int copyId)
         {
-            return true;
+            bool completed = false;
+            
+            if(AvailableCopies < Copies)
+            {
+                _availableCopies++;
+                completed = true;
+            }
+
+            return completed;
+
+
+
 
         }
 
         public virtual bool Renew()
         {
-            return false;
-
+            //Used to renew a specific copy of this item
+            bool completed = false;
+            return completed;
 
         }
 

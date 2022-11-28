@@ -12,9 +12,20 @@ namespace Assignment_2
 {
     public partial class Form1 : Form
     {
+        public List<LibraryLoanItem> loanList;
+        AddItemForm addItemForm;
         public Form1()
         {
+            loanList = new List<LibraryLoanItem>();
             InitializeComponent();
+            
+
+        }
+
+        private void addLoanItemButton_Click(object sender, EventArgs e)
+        {
+            addItemForm = new AddItemForm(loanList);
+            addItemForm.ShowDialog();
         }
     }
 }

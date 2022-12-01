@@ -42,19 +42,19 @@
             this.twoRenewalRadioButton = new System.Windows.Forms.RadioButton();
             this.fourRenewalRadioButton = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.loan7RadioButton = new System.Windows.Forms.RadioButton();
             this.loan21RadioButton = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.bookRadioButton = new System.Windows.Forms.RadioButton();
-            this.cdRadioButton = new System.Windows.Forms.RadioButton();
-            this.videoRadioButton = new System.Windows.Forms.RadioButton();
-            this.dvdRadioButton = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.newBookRadioButton = new System.Windows.Forms.RadioButton();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.newBookRadioButton = new System.Windows.Forms.RadioButton();
+            this.dvdRadioButton = new System.Windows.Forms.RadioButton();
+            this.bookRadioButton = new System.Windows.Forms.RadioButton();
+            this.videoRadioButton = new System.Windows.Forms.RadioButton();
+            this.cdRadioButton = new System.Windows.Forms.RadioButton();
             this.addButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -155,7 +155,6 @@
             this.oneRenewalRadioButton.Name = "oneRenewalRadioButton";
             this.oneRenewalRadioButton.Size = new System.Drawing.Size(31, 17);
             this.oneRenewalRadioButton.TabIndex = 11;
-            this.oneRenewalRadioButton.TabStop = true;
             this.oneRenewalRadioButton.Text = "1";
             this.oneRenewalRadioButton.UseVisualStyleBackColor = true;
             // 
@@ -166,7 +165,6 @@
             this.twoRenewalRadioButton.Name = "twoRenewalRadioButton";
             this.twoRenewalRadioButton.Size = new System.Drawing.Size(31, 17);
             this.twoRenewalRadioButton.TabIndex = 12;
-            this.twoRenewalRadioButton.TabStop = true;
             this.twoRenewalRadioButton.Text = "2";
             this.twoRenewalRadioButton.UseVisualStyleBackColor = true;
             // 
@@ -177,7 +175,6 @@
             this.fourRenewalRadioButton.Name = "fourRenewalRadioButton";
             this.fourRenewalRadioButton.Size = new System.Drawing.Size(31, 17);
             this.fourRenewalRadioButton.TabIndex = 13;
-            this.fourRenewalRadioButton.TabStop = true;
             this.fourRenewalRadioButton.Text = "4";
             this.fourRenewalRadioButton.UseVisualStyleBackColor = true;
             // 
@@ -194,9 +191,22 @@
             this.groupBox1.TabIndex = 14;
             this.groupBox1.TabStop = false;
             // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(92, 16);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(31, 17);
+            this.radioButton1.TabIndex = 14;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "0";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
             // loan7RadioButton
             // 
             this.loan7RadioButton.AutoSize = true;
+            this.loan7RadioButton.Checked = true;
             this.loan7RadioButton.Location = new System.Drawing.Point(102, 14);
             this.loan7RadioButton.Name = "loan7RadioButton";
             this.loan7RadioButton.Size = new System.Drawing.Size(56, 17);
@@ -265,69 +275,6 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Add Items";
             // 
-            // bookRadioButton
-            // 
-            this.bookRadioButton.AutoSize = true;
-            this.bookRadioButton.Checked = true;
-            this.bookRadioButton.Location = new System.Drawing.Point(5, 33);
-            this.bookRadioButton.Name = "bookRadioButton";
-            this.bookRadioButton.Size = new System.Drawing.Size(50, 17);
-            this.bookRadioButton.TabIndex = 20;
-            this.bookRadioButton.TabStop = true;
-            this.bookRadioButton.Text = "Book";
-            this.bookRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // cdRadioButton
-            // 
-            this.cdRadioButton.AutoSize = true;
-            this.cdRadioButton.Location = new System.Drawing.Point(61, 33);
-            this.cdRadioButton.Name = "cdRadioButton";
-            this.cdRadioButton.Size = new System.Drawing.Size(40, 17);
-            this.cdRadioButton.TabIndex = 21;
-            this.cdRadioButton.Text = "CD";
-            this.cdRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // videoRadioButton
-            // 
-            this.videoRadioButton.AutoSize = true;
-            this.videoRadioButton.Location = new System.Drawing.Point(109, 33);
-            this.videoRadioButton.Name = "videoRadioButton";
-            this.videoRadioButton.Size = new System.Drawing.Size(52, 17);
-            this.videoRadioButton.TabIndex = 22;
-            this.videoRadioButton.Text = "Video";
-            this.videoRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // dvdRadioButton
-            // 
-            this.dvdRadioButton.AutoSize = true;
-            this.dvdRadioButton.Location = new System.Drawing.Point(166, 33);
-            this.dvdRadioButton.Name = "dvdRadioButton";
-            this.dvdRadioButton.Size = new System.Drawing.Size(48, 17);
-            this.dvdRadioButton.TabIndex = 23;
-            this.dvdRadioButton.Text = "DVD";
-            this.dvdRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(92, 16);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(31, 17);
-            this.radioButton1.TabIndex = 14;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "0";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // newBookRadioButton
-            // 
-            this.newBookRadioButton.AutoSize = true;
-            this.newBookRadioButton.Location = new System.Drawing.Point(220, 33);
-            this.newBookRadioButton.Name = "newBookRadioButton";
-            this.newBookRadioButton.Size = new System.Drawing.Size(75, 17);
-            this.newBookRadioButton.TabIndex = 24;
-            this.newBookRadioButton.Text = "New Book";
-            this.newBookRadioButton.UseVisualStyleBackColor = true;
-            // 
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.newBookRadioButton);
@@ -341,6 +288,58 @@
             this.groupBox6.TabIndex = 21;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Item Type";
+            // 
+            // newBookRadioButton
+            // 
+            this.newBookRadioButton.AutoSize = true;
+            this.newBookRadioButton.Location = new System.Drawing.Point(220, 33);
+            this.newBookRadioButton.Name = "newBookRadioButton";
+            this.newBookRadioButton.Size = new System.Drawing.Size(75, 17);
+            this.newBookRadioButton.TabIndex = 24;
+            this.newBookRadioButton.Text = "New Book";
+            this.newBookRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // dvdRadioButton
+            // 
+            this.dvdRadioButton.AutoSize = true;
+            this.dvdRadioButton.Location = new System.Drawing.Point(166, 33);
+            this.dvdRadioButton.Name = "dvdRadioButton";
+            this.dvdRadioButton.Size = new System.Drawing.Size(48, 17);
+            this.dvdRadioButton.TabIndex = 23;
+            this.dvdRadioButton.Text = "DVD";
+            this.dvdRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // bookRadioButton
+            // 
+            this.bookRadioButton.AutoSize = true;
+            this.bookRadioButton.Checked = true;
+            this.bookRadioButton.Location = new System.Drawing.Point(5, 33);
+            this.bookRadioButton.Name = "bookRadioButton";
+            this.bookRadioButton.Size = new System.Drawing.Size(50, 17);
+            this.bookRadioButton.TabIndex = 20;
+            this.bookRadioButton.TabStop = true;
+            this.bookRadioButton.Text = "Book";
+            this.bookRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // videoRadioButton
+            // 
+            this.videoRadioButton.AutoSize = true;
+            this.videoRadioButton.Location = new System.Drawing.Point(109, 33);
+            this.videoRadioButton.Name = "videoRadioButton";
+            this.videoRadioButton.Size = new System.Drawing.Size(52, 17);
+            this.videoRadioButton.TabIndex = 22;
+            this.videoRadioButton.Text = "Video";
+            this.videoRadioButton.UseVisualStyleBackColor = true;
+            // 
+            // cdRadioButton
+            // 
+            this.cdRadioButton.AutoSize = true;
+            this.cdRadioButton.Location = new System.Drawing.Point(61, 33);
+            this.cdRadioButton.Name = "cdRadioButton";
+            this.cdRadioButton.Size = new System.Drawing.Size(40, 17);
+            this.cdRadioButton.TabIndex = 21;
+            this.cdRadioButton.Text = "CD";
+            this.cdRadioButton.UseVisualStyleBackColor = true;
             // 
             // addButton
             // 

@@ -16,10 +16,8 @@ namespace Assignment_2
         AddItemForm addItemForm;
         public Form1()
         {
-            loanList = new List<LibraryLoanItem>();
             InitializeComponent();
-            
-
+            loanList = new List<LibraryLoanItem>();
         }
 
         private void addLoanItemButton_Click(object sender, EventArgs e)

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment_2
 {
-    internal class Book : LibraryLoanItem
+    public class Book : LibraryLoanItem
     {
         //Loan Period 21 days
         //Max Renewal 4

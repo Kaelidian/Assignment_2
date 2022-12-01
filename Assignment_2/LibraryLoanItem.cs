@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,6 +9,7 @@ namespace Assignment_2
 {
     internal class LibraryLoanItem
     {
+        
         protected string _callNumber; // Format "100 GAD"
         protected string _title;
         protected string _author;
@@ -51,11 +53,8 @@ namespace Assignment_2
                 }
             }
         }
-
-        public string CallNumber
-        {
-            get { return _callNumber; }
-        }
+        
+        
         public string Title { get { return _title; } }
         public string Author { get { return _author; } }
         public int Copies { get { return _copies; } }
@@ -92,10 +91,14 @@ namespace Assignment_2
             //(include call number, title, author, loan period, number of copies, and available copies in the String representation)
             string libLoanItemString = "";
 
-            libLoanItemString = this.CallNumber + " Title: " + this.Title + " Author: " + this.Author +
+            libLoanItemString = this._callNumber + " Title: " + this.Title + " Author: " + this.Author +
                                 " Loan Period: " + this.LoanPeriod + " Copies: " + this.AvailableCopies + "/" + this.Copies;
 
             return libLoanItemString;
         }
+    }
+
+        
+
     }
 }

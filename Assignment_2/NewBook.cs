@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Assignment_2
 {
-    public class NewBook : Book
+    public class NewBook : LibraryLoanItem
     {
         public NewBook(string callNumber, string title, string author, int copies, int loanPeriod, int maxRenewals) : base(callNumber, title, author, copies, loanPeriod, maxRenewals)
         {
@@ -18,9 +18,8 @@ namespace Assignment_2
             return "New Book " + base.ToString();
         }
 
-        public override bool Renew()
+        public override bool Renew(string callNumber, int copyId)
         {
-            //No renewals on new books
             return false;
         }
     }

@@ -17,10 +17,10 @@ namespace Assignment_2
         {
             return "DVD " + base.ToString();
         }
-        public override bool Renew()
+        public override bool Renew(string callNumber, int copyId)
         {
-            //Not Renewable
             return false;
         }
+        
     }
 }

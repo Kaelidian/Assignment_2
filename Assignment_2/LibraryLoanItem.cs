@@ -5,32 +5,15 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Assignment_2
 {
     public abstract class LibraryLoanItem
     {
-        public enum LoanItemType
-        {
-            Book,
-            CD,
-            DVD,
-            NewBook,
-            Video
-        }
-        public enum LPeriod
-        {
-            seven = 7,
-            twentyOne = 21
+        
+        public List<LibraryLoanItem> _loanItems = new List<LibraryLoanItem>();
 
-        }
-        public enum MRenewals
-        {
-            four = 4,
-            two = 2,
-            one = 1,
-            none = 0
-        }
 
         protected string _callNumber; // Format "100 GAD"
         protected string _title;
@@ -88,18 +71,19 @@ namespace Assignment_2
 
         public int CheckOut(string callNumber )
         {
-            int copy = -1;
+            int copy = 0;
 
-            if (Utility.CallNumber.ValidateCNumber(callNumber))
+            if (callNumber.Length == 7)
             {
+                
                 if (this.AvailableCopies >= 1)
                 {
                     copy = Copies - AvailableCopies;
 
-                    TimesRenewed[copy] = 0;
-                    this._availableCopies -= 1;
+                    _timesRenewed[copy] = 0;
+                    _availableCopies -= 1;
                 }
-            }
+            }else { MessageBox.Show("Call Number invalid."); }
             return copy;
             
         }
@@ -121,10 +105,17 @@ namespace Assignment_2
 
         }
 
-        public virtual bool Renew()
+        public virtual bool Renew(string callNumber, int copyId)
         {
             //Used to renew a specific copy of this item
             bool completed = false;
+
+            if (_timesRenewed[copyId] < MaxRenewals)
+            {
+                _timesRenewed[copyId] += 1;
+                completed = true;
+            }
+            
             return completed;
 
         }

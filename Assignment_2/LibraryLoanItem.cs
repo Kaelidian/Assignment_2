@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -26,7 +27,7 @@ namespace Assignment_2
         
         public LibraryLoanItem(string callNumber, string title, string author, int copies, int loanPeriod, int maxRenewals)
         {
-            if (callNumber.Length > 0 && callNumber.Length == 7)
+            if (callNumber.Length == 7)
             {
                 this._callNumber = callNumber;
                 if (title.Length > 0)
@@ -76,13 +77,16 @@ namespace Assignment_2
             if (callNumber.Length == 7)
             {
                 
-                if (this.AvailableCopies >= 1)
-                {
-                    copy = Copies - AvailableCopies;
+                    if (this.AvailableCopies >= 1)
+                    {
+                        copy = Copies - AvailableCopies;
 
-                    _timesRenewed[copy] = 0;
-                    _availableCopies -= 1;
-                }
+                        _timesRenewed[copy] = 0;
+                        _availableCopies -= 1;
+                    }
+                
+                
+                
             }else { MessageBox.Show("Call Number invalid."); }
             return copy;
             
@@ -140,6 +144,8 @@ namespace Assignment_2
 
             return libLoanItemString;
         }
+
+        
         
     }
 

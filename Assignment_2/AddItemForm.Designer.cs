@@ -69,6 +69,7 @@
             // 
             // callNumTextBox
             // 
+            this.callNumTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.callNumTextBox.Location = new System.Drawing.Point(122, 32);
             this.callNumTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.callNumTextBox.Name = "callNumTextBox";
@@ -426,8 +427,10 @@
             // 
             // AddItemForm
             // 
+            this.AcceptButton = this.addButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.closeButton;
             this.ClientSize = new System.Drawing.Size(488, 645);
             this.Controls.Add(this.resetButton);
             this.Controls.Add(this.closeButton);

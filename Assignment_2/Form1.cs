@@ -188,5 +188,21 @@ namespace Assignment_2
                 }
             }
         }
+
+        private void clearButton_Click(object sender, EventArgs e)
+        {
+            searchInputTextBox.Clear();
+            searchOutputListBox.Items.Clear();
+            confirmationListBox.Items.Clear();
+            callNumberTextBox.Clear();
+            copyIDTextBox.Clear();
+
+            callNumberTextBox.Focus();
+        }
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

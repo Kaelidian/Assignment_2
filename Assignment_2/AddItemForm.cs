@@ -15,12 +15,12 @@ namespace Assignment_2
     public partial class AddItemForm : Form
     {
         public List<LibraryLoanItem> items;
-        //Form1 form1;
+        
         public AddItemForm(ref List<LibraryLoanItem> loanItems)
         {
             InitializeComponent();
             items = loanItems;
-            //form1 = new Form1();
+            
         }
 
         
@@ -38,23 +38,17 @@ namespace Assignment_2
 
         private void addButton_Click(object sender, EventArgs e)
         {
-            ParseSelections();
-        }
-
-        private void ParseSelections()
-        {
-
             LibraryLoanItem mockItem;
-            
+
             string callNumber = "";
             string title = "";
             string author = "";
             int copies = -1;
             int loanPeriod = loan7RadioButton.Checked ? 7 : 21;
             int maxRenewals = zeroRenewalRadioButton.Checked ? 0 : (oneRenewalRadioButton.Checked ? 1 : (twoRenewalRadioButton.Checked ? 2 : (fourRenewalRadioButton.Checked ? 4 : 0)));
-            
-            
-            if(callNumTextBox.Text.Length == 7)
+
+
+            if (callNumTextBox.Text.Length == 7)
             {
                 callNumber = callNumTextBox.Text;
                 if (titleTextBox.Text.Length > 0)
@@ -65,14 +59,14 @@ namespace Assignment_2
                         author = authorTextBox.Text;
                         if (int.TryParse(copiesTextBox.Text.Trim(), out copies))
                         {
-                            if(copies > 0)
+                            if (copies > 0)
                             {
                                 if (bookRadioButton.Checked == true)
                                 {
                                     mockItem = new Book(callNumber, title, author, copies, loanPeriod, maxRenewals);
                                     MessageBox.Show(mockItem.ToString());
                                     items.Add(mockItem);
-                                    
+
                                 }
                                 if (cdRadioButton.Checked == true)
                                 {
@@ -101,10 +95,12 @@ namespace Assignment_2
                             }
                             else { MessageBox.Show("Copies cannot be less than 1.", "Error", MessageBoxButtons.OK); }
                         }
-                    } else { MessageBox.Show("Author cannot be empty.", "Error", MessageBoxButtons.OK); }
+                    }
+                    else { MessageBox.Show("Author cannot be empty.", "Error", MessageBoxButtons.OK); }
                 }
                 else { MessageBox.Show("Title cannot be empty.", "Error", MessageBoxButtons.OK); }
-            }else { MessageBox.Show("Call Number Invalid.", "Error", MessageBoxButtons.OK); }
+            }
+            else { MessageBox.Show("Call Number Invalid.", "Error", MessageBoxButtons.OK); }
         }
 
         private void UpdateDefaults()

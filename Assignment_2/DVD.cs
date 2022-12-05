@@ -13,6 +13,10 @@ namespace Assignment_2
 
         }
 
+        public override string ToString()
+        {
+            return "DVD " + base.ToString();
+        }
         public override bool Renew()
         {
             //Not Renewable

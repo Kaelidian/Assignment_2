@@ -8,9 +8,14 @@ namespace Assignment_2
 {
     public class NewBook : Book
     {
-        public NewBook(string callNumber, string title, string author, string ISBN, int copies, int loanPeriod, int maxRenewals) : base(callNumber, title, author, ISBN, copies, loanPeriod, maxRenewals)
+        public NewBook(string callNumber, string title, string author, int copies, int loanPeriod, int maxRenewals) : base(callNumber, title, author, copies, loanPeriod, maxRenewals)
         {
 
+        }
+
+        public override string ToString()
+        {
+            return "New Book " + base.ToString();
         }
 
         public override bool Renew()

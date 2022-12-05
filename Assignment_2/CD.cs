@@ -11,5 +11,10 @@ namespace Assignment_2
         public CD(string callNumber, string title, string author, int copies, int loanPeriod, int maxRenewals) : base(callNumber, title, author, copies, loanPeriod, maxRenewals)
         {
         }
+
+        public override string ToString()
+        {
+            return "CD " + base.ToString();
+        }
     }
 }

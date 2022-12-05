@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Server;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -7,9 +8,30 @@ using System.Threading.Tasks;
 
 namespace Assignment_2
 {
-    public class LibraryLoanItem
+    public abstract class LibraryLoanItem
     {
-        
+        public enum LoanItemType
+        {
+            Book,
+            CD,
+            DVD,
+            NewBook,
+            Video
+        }
+        public enum LPeriod
+        {
+            seven = 7,
+            twentyOne = 21
+
+        }
+        public enum MRenewals
+        {
+            four = 4,
+            two = 2,
+            one = 1,
+            none = 0
+        }
+
         protected string _callNumber; // Format "100 GAD"
         protected string _title;
         protected string _author;
@@ -18,10 +40,10 @@ namespace Assignment_2
         protected int _loanPeriod;
         protected int _maxRenewals;
         protected int[] _timesRenewed;
-
+        
         public LibraryLoanItem(string callNumber, string title, string author, int copies, int loanPeriod, int maxRenewals)
         {
-            if (callNumber.Length > 0 && callNumber.Length < 7)
+            if (callNumber.Length > 0 && callNumber.Length == 7)
             {
                 this._callNumber = callNumber;
                 if (title.Length > 0)
@@ -44,7 +66,7 @@ namespace Assignment_2
                                     this._timesRenewed = new int[copies];
                                     for(int i = 0; i < copies; i++)
                                     {
-                                        this._timesRenewed[i] = 0;
+                                        this._timesRenewed[i] = -1;
                                     }
                                 }
                             }
@@ -54,7 +76,7 @@ namespace Assignment_2
             }
         }
         
-        
+        public string CallNumber { get { return _callNumber; } }
         public string Title { get { return _title; } }
         public string Author { get { return _author; } }
         public int Copies { get { return _copies; } }
@@ -64,25 +86,22 @@ namespace Assignment_2
 
         public int[] TimesRenewed { get { return _timesRenewed; } }
 
-        public int CheckOut(string callNumber)
+        public int CheckOut(string callNumber )
         {
-            //To check out 
-            //update availableCopies
-            
-
-
             int copy = -1;
 
-            if (this.AvailableCopies >= 1)
+            if (Utility.CallNumber.ValidateCNumber(callNumber))
             {
-                copy = Copies - AvailableCopies;
+                if (this.AvailableCopies >= 1)
+                {
+                    copy = Copies - AvailableCopies;
 
-                //TimesRenewed[copy] = 0;
-                
-                return copy;
-
+                    TimesRenewed[copy] = 0;
+                    this._availableCopies -= 1;
+                }
             }
-            else return -1;
+            return copy;
+            
         }
 
         public bool CheckIn(string callNumber, int copyId)
@@ -110,19 +129,30 @@ namespace Assignment_2
 
         }
 
+        public string ToString(char a)
+        {
+            string simpleString = "";
+            if (a == 's')
+            {
+                simpleString = "Call #" + CallNumber + " Title: " + Title + " Author: " + Author;
+            }
+            return simpleString;
+        }
         public override string ToString()
         {
             //(include call number, title, author, loan period, number of copies, and available copies in the String representation)
             string libLoanItemString = "";
 
-            libLoanItemString = this._callNumber + " Title: " + this.Title + " Author: " + this.Author +
-                                " Loan Period: " + this.LoanPeriod + " Copies: " + this.AvailableCopies + "/" + this.Copies;
+            libLoanItemString = "Call #: " + CallNumber + " Title: " + Title + " Author: " + Author + "\x0A" +
+                               " Loan Period: " + LoanPeriod + " Copies: " + AvailableCopies + "/" + Copies;
+
 
             return libLoanItemString;
         }
+        
     }
 
         
 
-    }
 }
+
